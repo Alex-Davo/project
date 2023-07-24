@@ -2,13 +2,13 @@
 
 **What Is It**
 
-This is a Wordle Bot I created in order to beat my friends in a daily competition. It is usually able to answer the word in 3-4 guess, making it a pretty efficient bot.
+This is a Wordle Bot I created in order to beat my friends in a daily competition. It is usually able to answer the word in 3-4 guess, making it a pretty efficient bot. It uses the two text files that are supplied in the folder with it as a dictionary of words that can be used.
 
 **How I Would Improve This**
 
-As this is a personal project, a lot of the quality of life features are not up to snuff for a standard consumers use. However, in terms of the algorihtmic changes I would make next:
+As this is a personal project, a lot of the quality of life features are not up to snuff for a standard consumers use. It also relies on the word dictionaries I supplied being 100% accurate, and from my testing the Wordle dictionary and the dictionary my bot uses as a wordle dictionary are not the 100% accurate as of now. However, in terms of the algorihtmic changes I would make next:
 - Whenever there are only two possible answers that the Bot can find, it will always guess one of the answers. This is understandable, as two possible answers is a 50/50 guess, followed by a 100% gues, whereas if the bot guesses an outside word, it becomes a 0% guess into a 100% guess. However, there are times when there are more answers than just two where it still only makes sense to guess. An example of this would a final list of words that are: {blood, brood, flood, snood}. In this situation, a guess of blood would lead to a 25% chance of being correct, into a 100% chance of being correct in the following turn. My bot would choose something along the the lines of blast, ensuring the next turn is a 100% chance of an answer, but it loses out on the immediate chance. I don't know how often situations like this arise, but having this is an important optimization.
-- In most of the top wordle bots, there first guess is usually between one of two words: Slate and Salet. My bot chooses the word Alert, which shares 4 of the same letters and has an R instead of an S. R actually appears in the wordle dictionary more total times than S by around 300 times (think error), while also appearing in seperate entries at a higher rate than S. However, S is the letter that starts the most amount of words in the entire dictionary and still appears in a large amount of seperate entries, giving a guess that starts with S a higher value than a guess that contains an R. Therefore, incorporating positional value within my bot will help it improve. 
+- In most of the top wordle bots, the first guess is usually between one of two words: Slate and Salet. My bot chooses the word Stare as its starting guess. While this starting guess shares a lot of traits with these, it is less optimal compared to these two. This is because my bot does not incorporate positional value as completely as a more optimal bot. It really only looks into positional value of the first letter, which causes my bot to be more likely to settle for a yellow, as opposed to a more desirable green.
 
 ## _Chess Engine, Python_
 
