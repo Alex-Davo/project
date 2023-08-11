@@ -25,20 +25,6 @@ There are many ways I would improve my chess AI, but there are two things that s
 
 Now, this is only scratching the surface of what is possible within a chess engine, and many more things could be improved upon it. A few of these could be a quiescent search, move ordering, and null move pruning, as well as altering the way chess boards are stored (such as bitboards).
 
-## _Blackjack Game, Java_
-
-**What Is It**
-
-This is a simple Blackjack card game that is used to pit two human players against each other, with one CPU being the dealer. It starts off with asking each player privately for two numbers. These numbers are used to alter a players score so that, in theory, only the player who entered the numbers can figure out the score. This is not too disimilar to a [private key][key]. An example of this, using the two numbers 12 and 6 (although larger numbers are recommended in actual practice):
-- Player one draws a faceup 7 and a facedown 2. His gamescore at the moment is 9. However, when it is displayed, it is shown as 21 (added the 12). The 6 is then subtracted from the amount (to become a 15). The player hits, and was given a jack (so a game score of 19). The next score is displayed as a 37 (22 added to 15). The player will stay, knowing he has a total of a 19, while the player he is playing against should be none the wiser.
-
-While this implementation is not perfect, it does allow for players to be clued in on their numbers while playing side-by-side to a human opponent. After both people's turns, the dealer will make his turn, and the person closest to 21 without going over is the winner.
-
-
-**How I Would Improve This**
-
-While playing against another human is fun, I could certainly add more features within this program to expand its functionality. A man vs CPU mode is one of these things, with various difficulties based on how much the computer wants to cheat in order to win/alter difficulty.
-
 
 ## _Home Server_
 
