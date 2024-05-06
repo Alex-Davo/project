@@ -6,7 +6,7 @@
 int main() {
     bool gameOver = 0;
     int counter = 0;
-    std::vector<double> letterVector;
+    std::vector<long> letterVector;
     std::vector<std::string> wordVector;
     std::vector<std::string> answerVector;
     introduce();

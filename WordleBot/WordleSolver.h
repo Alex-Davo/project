@@ -12,11 +12,11 @@
 //This is a function that will create a vector that stores the information regarding a character.
 //Because of ASCII values, you can index the Vector through using vector[charVal-'a]
 //This is similar to a map, but because of the ways characters index themselve, we can save on some memory.
-std::vector<double> createValVector();
+std::vector<long> createValVector();
 
 //Seen in wordleAlgo.cpp
 //this is pretty much a copy of the previous function. It is seperate and not templated because I want to make it clear when a
-//vector<bool> is created as opposed to a vector<double>. While a vector<double> could do the same concept, it takes up loads more memory
+//vector<bool> is created as opposed to a vector<long>. While a vector<long> could do the same concept, it takes up loads more memory
 //as opposed to a vector<bool>.
 std::vector<bool> createBoolVector();
 
@@ -52,15 +52,15 @@ void guessInteraction(std::string typedGuess, std::vector<bool> &nullChar, std::
 
 //Seen in wordleAlgo.cpp
 //Finds the "best" available word to guess using the information gathered.
-std::string findWord(std::vector<std::string> wordVector, std::vector<double> sumVector, std::vector<std::string> answerVector);
+std::string findWord(std::vector<std::string> wordVector, std::vector<long> sumVector, std::vector<std::string> answerVector);
 
 //Seen in wordleAlgo.cpp
 //This function prevents rewarded guesses for info that is already known.
 //Yellows, Whites, and Greens are valued at zero.
-void nullifyVector(std::vector<double> &sumVector, std::vector<bool> existVector);
+void nullifyVector(std::vector<long> &sumVector, std::vector<bool> existVector);
 
 //Seen in wordleAlgo.cpp
 //This function sums up the value within the vectors, and then calls the other functions to perform their duties.
-std::vector<std::string> findAnswer(std::vector<std::string> wordVector, std::vector<double> sumVector, std::vector<std::string> answerVector, bool &gameOver);
+std::vector<std::string> findAnswer(std::vector<std::string> wordVector, std::vector<long> sumVector, std::vector<std::string> answerVector, bool &gameOver);
 
 #endif

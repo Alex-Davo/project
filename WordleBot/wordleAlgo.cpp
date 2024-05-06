@@ -3,15 +3,15 @@
 //This is a function that will create a vector that stores the information regarding a character.
 //Because of ASCII values, you can index the Vector through using vector[charVal-'a]
 //This is similar to a map, but because of the ways characters index themselve, we can save on some memory.
-std::vector<double> createValVector(){
-    std::vector<double> a (26);
-    double val = 0;
+std::vector<long> createValVector(){
+    std::vector<long> a (26);
+    long val = 0;
     std::fill(a.begin(), a.end(), val);
     return a;
 }
 
 //this is pretty much a copy of the previous function. It is seperate and not templated because I want to make it clear when a
-//vector<bool> is created as opposed to a vector<double>. While a vector<double> could do the same concept, it takes up loads more memory
+//vector<bool> is created as opposed to a vector<long>. While a vector<long> could do the same concept, it takes up loads more memory
 //as opposed to a vector<bool>.
 std::vector<bool> createBoolVector(){
     std::vector<bool> a (26);
@@ -116,7 +116,7 @@ void guessInteraction(std::string typedGuess, std::vector<bool> &nullChar, std::
 }
 
 //Finds the "best" available word to guess using the information gathered.
-std::string findWord(std::vector<std::string> wordVector, std::vector<double> sumVector, std::vector<std::string> answerVector) {
+std::string findWord(std::vector<std::string> wordVector, std::vector<long> sumVector, std::vector<std::string> answerVector) {
     static std::vector<std::string> prevWord = {};
     int count = 0;
     int value = -1;
@@ -167,7 +167,7 @@ std::string findWord(std::vector<std::string> wordVector, std::vector<double> su
 
 //This function prevents rewarded guesses for info that is already known.
 //Yellows, Whites, and Greens are valued at zero.
-void nullifyVector(std::vector<double> &sumVector, std::vector<bool> existVector) {
+void nullifyVector(std::vector<long> &sumVector, std::vector<bool> existVector) {
     //for loop checks through all 26 values in the vector (better thought of as the 26 letters in the alphabet)
     for(int i = 0; i < 26; i++){
         if (existVector[i] == 1) {
@@ -177,7 +177,7 @@ void nullifyVector(std::vector<double> &sumVector, std::vector<bool> existVector
 }
 
 //This function sums up the value within the vectors, and then calls the other functions to perform their duties.
-std::vector<std::string> findAnswer(std::vector<std::string> wordVector, std::vector<double> sumVector, std::vector<std::string> answerVector, bool &gameOver) {
+std::vector<std::string> findAnswer(std::vector<std::string> wordVector, std::vector<long> sumVector, std::vector<std::string> answerVector, bool &gameOver) {
     static std::vector<bool> nullChar = createBoolVector();
     static std::vector<bool> existVector = createBoolVector();
     std::vector<char> greenArr;
